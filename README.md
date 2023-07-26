@@ -8,9 +8,9 @@ Kotlin project template build by gradle. Default integration some useful plugin.
 - JDK 17
 - Gradle
 ## Framework we use
-Language: Kotlin
-Test framework: Junit 5
-Build Tool: Gradle
+- Language: Kotlin
+- Test framework: Junit 5
+- Build Tool: Gradle
 
 ## Plugins we integrate
 - detekt
