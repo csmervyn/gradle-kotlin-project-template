@@ -13,6 +13,8 @@ plugins {
     application
 
     id("io.gitlab.arturbosch.detekt").version("1.23.0")
+
+    id("org.jlleitschuh.gradle.ktlint") version "11.5.0"
 }
 
 repositories {
@@ -79,4 +81,12 @@ tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
 }
 tasks.withType<io.gitlab.arturbosch.detekt.DetektCreateBaselineTask>().configureEach {
     this.jvmTarget = "17"
+}
+
+configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
+    outputToConsole.set(true)
+    reporters {
+        reporter(org.jlleitschuh.gradle.ktlint.reporter.ReporterType.PLAIN)
+        reporter(org.jlleitschuh.gradle.ktlint.reporter.ReporterType.CHECKSTYLE)
+    }
 }

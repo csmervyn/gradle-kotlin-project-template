@@ -15,6 +15,7 @@ Kotlin project template build by gradle. Default integration some useful plugin.
 ## Plugins we integrate
 - detekt
 - gitleaks
+- Ktlint
 
 ### gitleaks
 gitleaks 依赖 go，因此本地需要安装go。
@@ -45,3 +46,18 @@ pre-commit run --all-files
 #### reference
 - [detekt document for gradle config](https://detekt.dev/docs/gettingstarted/gradle)
 - [default detekt config file](https://github.com/detekt/detekt/blob/main/detekt-core/src/main/resources/default-detekt-config.yml)
+
+### Ktlint
+本地执行 Ktlint 检查：
+```shell
+./gradlew clean ktlintCheck
+# or
+./gradlew clean build
+```
+如果需要主动格式化代码，可以执行如下命令：
+```shell
+./gradlew clean ktlintFormat
+```
+#### reference
+- [Gradle integrate Ktlint](https://pinterest.github.io/ktlint/0.50.0/install/integrations/)
+- [ktlint-gradle plugin](https://github.com/jlleitschuh/ktlint-gradle)
