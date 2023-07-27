@@ -7,6 +7,12 @@ Kotlin project template build by gradle. Default integration some useful plugin.
 ## Prerequisites
 - JDK 17
 - Gradle
+
+## Build in local
+```shell
+./gradlew clean build
+```
+
 ## Framework we use
 - Language: Kotlin
 - Test framework: Junit 5
@@ -16,6 +22,7 @@ Kotlin project template build by gradle. Default integration some useful plugin.
 - detekt
 - gitleaks
 - Ktlint
+- kover
 
 ### gitleaks
 gitleaks 依赖 go，因此本地需要安装go。
@@ -40,7 +47,7 @@ pre-commit run --all-files
 ./gradlew clean build
 ```
 本地报告所在位置：
-```shell
+```text
 {root根目录}/app/build/reports/detekt/detekt.html
 ```
 #### reference
@@ -61,3 +68,25 @@ pre-commit run --all-files
 #### reference
 - [Gradle integrate Ktlint](https://pinterest.github.io/ktlint/0.50.0/install/integrations/)
 - [ktlint-gradle plugin](https://github.com/jlleitschuh/ktlint-gradle)
+
+### Kover
+本地生成 kover 单元测试报告，执行如下命令：
+```shell
+./gradlew clean koverHtmlReport
+# or
+./gradlew clean build
+```
+测试覆盖率报告所在位置：
+```text
+{项目root目录}/app/build/reports/kover/html/index.html
+```
+本地执行 kover verify(检查测试覆盖率阈值)：
+```shell
+./gradlew clean koverVerify
+# or
+./gradlew clean build
+```
+#### reference
+- [kover github](https://github.com/Kotlin/kotlinx-kover)
+- [kover gradle plugin home](https://kotlin.github.io/kotlinx-kover/gradle-plugin/)
+- [kover verification configuration](https://kotlin.github.io/kotlinx-kover/gradle-plugin/configuring#verification)

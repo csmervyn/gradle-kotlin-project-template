@@ -15,6 +15,8 @@ plugins {
     id("io.gitlab.arturbosch.detekt").version("1.23.0")
 
     id("org.jlleitschuh.gradle.ktlint") version "11.5.0"
+
+    id("org.jetbrains.kotlinx.kover") version "0.7.2"
 }
 
 repositories {
@@ -89,4 +91,52 @@ configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
         reporter(org.jlleitschuh.gradle.ktlint.reporter.ReporterType.PLAIN)
         reporter(org.jlleitschuh.gradle.ktlint.reporter.ReporterType.CHECKSTYLE)
     }
+}
+
+koverReport {
+    defaults {
+        // configure verification
+        verify {
+            //  verify coverage when running the `check` task
+            onCheck = true
+
+            // add verification rule
+            rule {
+                // check this rule during verification
+                isEnabled = true
+
+                // specify the code unit for which coverage will be aggregated
+                entity = kotlinx.kover.gradle.plugin.dsl.GroupingEntityType.APPLICATION
+                // specify verification bound for this rule
+                bound {
+                    // lower bound
+                    minValue = 65
+
+                    // upper bound
+                    maxValue = 99
+
+                    // specify which units to measure coverage for
+                    metric = kotlinx.kover.gradle.plugin.dsl.MetricType.LINE
+
+                    // specify an aggregating function to obtain a single value that will be checked against the lower and upper boundaries
+                    aggregation = kotlinx.kover.gradle.plugin.dsl.AggregationType.COVERED_PERCENTAGE
+                }
+
+                // add lower bound for percentage of covered lines
+                minBound(2)
+
+                // add upper bound for percentage of covered lines
+                maxBound(98)
+            }
+        }
+    }
+}
+
+tasks.koverHtmlReport {
+    dependsOn(tasks.test)
+}
+
+tasks.test {
+    finalizedBy(tasks.koverVerify)
+    finalizedBy(tasks.koverHtmlReport)
 }
