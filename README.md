@@ -23,6 +23,7 @@ Kotlin project template build by gradle. Default integration some useful plugin.
 - gitleaks
 - Ktlint
 - kover
+- dependencycheck
 
 ### gitleaks
 gitleaks 依赖 go，因此本地需要安装go。
@@ -90,3 +91,18 @@ pre-commit run --all-files
 - [kover github](https://github.com/Kotlin/kotlinx-kover)
 - [kover gradle plugin home](https://kotlin.github.io/kotlinx-kover/gradle-plugin/)
 - [kover verification configuration](https://kotlin.github.io/kotlinx-kover/gradle-plugin/configuring#verification)
+
+### dependencycheck
+本地运行 dependencycheck 的检查
+```shell
+./gradlew dependencyCheckAnalyze
+```
+上面的命令在运行时，在命令行检查 dependency 的 vulnerabilities和生成 dependency-check-report 报告。
+dependency-check-report 报告所在位置:
+```shell
+{项目 root directory}/app/build/reports/dependency-check-report.html
+```
+
+#### reference
+- [Gradle dependencycheck plugin](https://plugins.gradle.org/plugin/org.owasp.dependencycheck)
+- [Dependencycheck documention](http://jeremylong.github.io/DependencyCheck/dependency-check-gradle/index.html)
