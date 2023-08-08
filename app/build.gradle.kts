@@ -37,6 +37,16 @@ dependencies {
 
     // This dependency is used by the application.
     implementation("com.google.guava:guava:32.1.2-jre")
+
+    // https://mvnrepository.com/artifact/io.mockk/mockk
+    testImplementation("io.mockk:mockk:1.13.5")
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+    implementation("org.slf4j:slf4j-api:2.0.7")
+
+    // https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
+    testImplementation("ch.qos.logback:logback-classic:1.4.9")
+    // https://mvnrepository.com/artifact/org.assertj/assertj-core
+    testImplementation("org.assertj:assertj-core:3.24.2")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.

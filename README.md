@@ -17,7 +17,7 @@ Kotlin project template build by gradle. Default integration some useful plugin.
 - Language: Kotlin
 - Test framework: Junit 5
 - Build Tool: Gradle
-
+- Mock framework: Mockk
 ## Plugins we integrate
 - detekt
 - gitleaks
