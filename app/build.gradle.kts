@@ -44,7 +44,7 @@ dependencies {
     implementation("org.slf4j:slf4j-api:2.0.7")
 
     // https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
-    testImplementation("ch.qos.logback:logback-classic:1.4.9")
+    testImplementation("ch.qos.logback:logback-classic:1.4.11")
     // https://mvnrepository.com/artifact/org.assertj/assertj-core
     testImplementation("org.assertj:assertj-core:3.24.2")
 }
