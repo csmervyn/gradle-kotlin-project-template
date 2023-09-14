@@ -18,12 +18,16 @@ Kotlin project template build by gradle. Default integration some useful plugin.
 - Test framework: Junit 5
 - Build Tool: Gradle
 - Mock framework: Mockk
+- Assert framework: Hamcrest
 ## Plugins we integrate
 - detekt
 - gitleaks
 - Ktlint
 - kover
 - dependencycheck
+
+## Utils we use
+- mapStruct
 
 ### gitleaks
 gitleaks 依赖 go，因此本地需要安装go。
@@ -106,3 +110,10 @@ dependency-check-report 报告所在位置:
 #### reference
 - [Gradle dependencycheck plugin](https://plugins.gradle.org/plugin/org.owasp.dependencycheck)
 - [Dependencycheck documention](http://jeremylong.github.io/DependencyCheck/dependency-check-gradle/index.html)
+
+## MapStruct
+
+#### reference
+- [MapStruct](https://mapstruct.org/)
+- [Grade integration MapStruct](https://github.com/mapstruct/mapstruct-examples/blob/main/mapstruct-kotlin-gradle/build.gradle.kts)
+

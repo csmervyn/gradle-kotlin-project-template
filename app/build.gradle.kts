@@ -19,6 +19,8 @@ plugins {
     id("org.jetbrains.kotlinx.kover") version "0.7.3"
 
     id("org.owasp.dependencycheck") version "8.4.0"
+
+    kotlin("kapt") version "1.9.10"
 }
 
 repositories {
@@ -47,6 +49,10 @@ dependencies {
     testImplementation("ch.qos.logback:logback-classic:1.4.11")
     // https://mvnrepository.com/artifact/org.assertj/assertj-core
     testImplementation("org.assertj:assertj-core:3.24.2")
+    implementation("org.mapstruct:mapstruct:1.5.5.Final")
+    kapt("org.mapstruct:mapstruct-processor:1.5.5.Final")
+    // https://mvnrepository.com/artifact/org.hamcrest/hamcrest-all
+    testImplementation("org.hamcrest:hamcrest-core:1.3")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
