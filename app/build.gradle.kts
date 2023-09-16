@@ -43,7 +43,7 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     testImplementation("io.mockk:mockk:1.13.7")
     testImplementation("ch.qos.logback:logback-classic:1.4.11")
-    testImplementation("org.hamcrest:hamcrest-core:1.3")
+    testImplementation("org.hamcrest:hamcrest-core:2.2")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
