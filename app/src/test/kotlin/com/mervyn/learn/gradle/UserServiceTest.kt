@@ -6,11 +6,12 @@ import io.mockk.impl.annotations.MockK
 import io.mockk.junit5.MockKExtension
 import io.mockk.just
 import io.mockk.slot
+import org.hamcrest.MatcherAssert.assertThat
+import org.hamcrest.core.Is.`is`
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.slf4j.Logger
-import kotlin.test.assertEquals
 
 /**
  * @author cs-mervyn
@@ -40,7 +41,7 @@ class UserServiceTest {
         val userName = userService.getUserName()
 
         // then
-        assertEquals(userName, "cs-mervyn")
-        assertEquals(logMessageSlot.captured, "Call get user name fun")
+        assertThat(userName, `is`("cs-mervyn"))
+        assertThat(logMessageSlot.captured, `is`("Call get user name fun"))
     }
 }
