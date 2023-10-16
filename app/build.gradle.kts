@@ -16,7 +16,7 @@ plugins {
 
     id("org.jlleitschuh.gradle.ktlint") version "11.6.0"
 
-    id("org.jetbrains.kotlinx.kover") version "0.7.3"
+    id("org.jetbrains.kotlinx.kover") version "0.7.4"
 
     id("org.owasp.dependencycheck") version "8.4.0"
 
