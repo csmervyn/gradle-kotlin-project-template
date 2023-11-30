@@ -42,7 +42,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.10.1")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     testImplementation("io.mockk:mockk:1.13.8")
-    testImplementation("ch.qos.logback:logback-classic:1.4.12")
+    testImplementation("ch.qos.logback:logback-classic:1.4.13")
     testImplementation("org.hamcrest:hamcrest-core:2.2")
 }
 
