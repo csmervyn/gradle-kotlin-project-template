@@ -21,6 +21,7 @@ plugins {
     id("org.owasp.dependencycheck") version "9.0.4"
 
     kotlin("kapt") version "1.9.21"
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 repositories {
@@ -34,6 +35,7 @@ dependencies {
     implementation("org.slf4j:slf4j-api:2.0.9")
     implementation("org.mapstruct:mapstruct:1.5.5.Final")
     kapt("org.mapstruct:mapstruct-processor:1.5.5.Final")
+    implementation("ch.qos.logback:logback-classic:1.4.14")
 
     // Use the Kotlin JUnit 5 integration.
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
