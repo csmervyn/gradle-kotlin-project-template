@@ -18,7 +18,7 @@ plugins {
 
     id("org.jetbrains.kotlinx.kover") version "0.7.5"
 
-    id("org.owasp.dependencycheck") version "9.0.5"
+    id("org.owasp.dependencycheck") version "9.0.6"
 
     kotlin("kapt") version "1.9.21"
     id("com.github.johnrengelman.shadow") version "8.1.1"
