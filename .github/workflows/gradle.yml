@@ -39,10 +39,5 @@ jobs:
       with:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
-    - name: Build and push
-      uses: docker/build-push-action@v5
-      with:
-        context: .
-        platforms: linux/amd64,linux/arm64
-        push: true
-        tags: csmervyn718/gradle-kotlin-project-template:latest
+    - name: Execute Gradle build and push multiple platsform image
+      run: ./gradlew buildMultiplePlatsformImageInForCICD
