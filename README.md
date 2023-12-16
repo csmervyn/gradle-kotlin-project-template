@@ -29,3 +29,8 @@ Kotlin project template build by gradle. Default integration some useful plugin.
 
 ## Utils we use
 - [MapStruct](./documents/utils-we-use.md#MapStruct)
+## Build image
+- If you want to build single platform image you can directly use `docker build` command.
+- If you want to manually build multiple platforms and architecture image , please follow [the steps](./documents/build-multiple-platforms-and-architectures-image.md).
+- If you want to automatically build multiple platforms and architecture image, you can directly run `./gradle clean build`. Because our project bound buildx script. **But notes: you need to [prepare your buildx builder](./documents/build-multiple-platforms-and-architectures-image.md), before you run that command**
+
