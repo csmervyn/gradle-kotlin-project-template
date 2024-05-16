@@ -43,7 +43,7 @@ dependencies {
     // Use the JUnit 5 integration.
     testImplementation("org.junit.jupiter:junit-jupiter-engine:5.10.1")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-    testImplementation("io.mockk:mockk:1.13.8")
+    testImplementation("io.mockk:mockk:1.13.11")
     testImplementation("ch.qos.logback:logback-classic:1.4.14")
     testImplementation("org.hamcrest:hamcrest-core:2.2")
 }
