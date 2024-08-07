@@ -32,7 +32,7 @@ repositories {
 dependencies {
     // This dependency is used by the application.
     implementation("com.google.guava:guava:33.0.0-jre")
-    implementation("org.slf4j:slf4j-api:2.0.10")
+    implementation("org.slf4j:slf4j-api:2.0.14")
     implementation("org.mapstruct:mapstruct:1.5.5.Final")
     kapt("org.mapstruct:mapstruct-processor:1.5.5.Final")
     implementation("ch.qos.logback:logback-classic:1.4.14")
