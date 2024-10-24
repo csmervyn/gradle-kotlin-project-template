@@ -24,13 +24,9 @@ plugins {
     id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
-repositories {
-    // Use Maven Central for resolving dependencies.
-    mavenCentral()
-}
-
 apply {
     from("./gradle/dependencies.gradle")
+    from("./gradle/repositories.gradle")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
