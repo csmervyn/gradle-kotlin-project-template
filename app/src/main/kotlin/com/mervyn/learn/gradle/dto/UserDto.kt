@@ -7,5 +7,5 @@ package com.mervyn.learn.gradle.dto
  */
 data class UserDto(
     val name: String,
-    val age: Int
+    val age: Int,
 )
