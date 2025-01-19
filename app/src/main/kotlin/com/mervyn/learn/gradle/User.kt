@@ -7,5 +7,5 @@ package com.mervyn.learn.gradle
  */
 data class User(
     val name: String,
-    val age: Int
+    val age: Int,
 )
