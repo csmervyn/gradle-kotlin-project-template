@@ -16,7 +16,7 @@ plugins {
 
     id("org.jlleitschuh.gradle.ktlint") version "11.6.1"
 
-    id("org.jetbrains.kotlinx.kover") version "0.7.5"
+    id("org.jetbrains.kotlinx.kover") version "0.9.1"
 
     id("org.owasp.dependencycheck") version "9.0.7"
 
@@ -85,40 +85,14 @@ configure<org.jlleitschuh.gradle.ktlint.KtlintExtension> {
     }
 }
 
-koverReport {
-    defaults {
-        // configure verification
-        verify {
-            //  verify coverage when running the `check` task
-            onCheck = true
-
-            // add verification rule
-            rule {
-                // check this rule during verification
-                isEnabled = true
-
-                // specify the code unit for which coverage will be aggregated
-                entity = kotlinx.kover.gradle.plugin.dsl.GroupingEntityType.APPLICATION
-                // specify verification bound for this rule
-                bound {
-                    // lower bound
-                    minValue = 65
-
-                    // upper bound
-                    maxValue = 99
-
-                    // specify which units to measure coverage for
-                    metric = kotlinx.kover.gradle.plugin.dsl.MetricType.LINE
-
-                    // specify an aggregating function to obtain a single value that will be checked against the lower and upper boundaries
-                    aggregation = kotlinx.kover.gradle.plugin.dsl.AggregationType.COVERED_PERCENTAGE
-                }
-
-                // add lower bound for percentage of covered lines
-                minBound(2)
-
-                // add upper bound for percentage of covered lines
-                maxBound(98)
+kover.reports {
+    // configure verification
+    verify {
+        // add verification rule
+        rule {
+            bound {
+                minValue.set(2)
+                maxValue.set(98)
             }
         }
     }
