@@ -20,7 +20,7 @@ plugins {
 
     id("org.owasp.dependencycheck") version "12.1.8"
 
-    kotlin("kapt") version "2.2.20"
+    kotlin("kapt") version "2.2.21"
     id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
